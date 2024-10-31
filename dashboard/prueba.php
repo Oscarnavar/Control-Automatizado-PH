@@ -34,7 +34,7 @@ if (isset($data['feeds']) && count($data['feeds']) > 0) {
         ". Si el pH no está disponible, es crucial revisarlo cuanto antes.";
 
         $sid = "AC402b63c2ee75d080c1b157001e366e6e";
-        $token = "50f2dc1f27ff9d4d705ca4004187b863";
+        $token = "4dc7698bc974d50c53cb144f6951d587";
         $twilio = new Client($sid, $token);
 
         try {
