@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Data de ThingSpeak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Descargar Data de ThingSpeak</h1>
+        <button onclick="descargarData()">Descargar Data en CSV</button>
+    </div>
+
+    <script>
+        function descargarData() {
+            const channelID = 2665842;
+            const apiKey = 'TU_API_KEY';  // Reemplazar con tu API Key de lectura si es necesaria
+            const format = 'csv';  // Puede ser 'json' o 'csv'
+
+            // Crear la URL para la petición
+            const url = `https://api.thingspeak.com/channels/${channelID}/feeds.${format}?api_key=${apiKey}`;
+
+            // Crear un enlace temporal para descargar los datos
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `data_thingspeak_${channelID}.${format}`;  // Nombre del archivo
+            document.body.appendChild(link);
+
+            // Hacer clic en el enlace para iniciar la descarga
+            link.click();
+
+            // Eliminar el enlace temporal después de la descarga
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>
