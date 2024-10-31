@@ -43,13 +43,13 @@ if (isset($data['feeds']) && count($data['feeds']) > 0) {
 
         // Hacer la llamada usando Twilio
         $sid = "AC402b63c2ee75d080c1b157001e366e6e";
-        $token = "50f2dc1f27ff9d4d705ca4004187b863";
+        $token = "4dc7698bc974d50c53cb144f6951d587";
         $twilio = new Client($sid, $token);
 
         try {
             $call = $twilio->calls->create(
                 "+51961576391", // Número de teléfono al que deseas llamar
-                "+15017122661", // Número de teléfono de Twilio que realiza la llamada
+                "+12093258046", // Número de teléfono de Twilio que realiza la llamada
                 [
                     "url" => "https://oscarnavar.github.io/Control-Automatizado-PH.github.io/dashboard/Mensaje.html" // URL del TwiML para manejar la llamada
                 ]
